@@ -8,7 +8,7 @@ You will need to travel by plane from your home airport of 'ABC' to the destinat
 
 ## Challenge
 
-Implement the type FewestStops<T>, where T is a tuple of tuples, with each nested tuple representing a single flight in the format `['ABC', 'XYZ']`. The type should resolve to a tuple representing the path with the fewest stops from the origin to the destination, in the format `['ABC', 'DEF', ... , 'XYZ']`.
+Implement the type `FewestStops<T>`, where `T` is a tuple of tuples, with each nested tuple representing a single flight in the format `['ABC', 'XYZ']`. The type should resolve to a tuple representing the path with the fewest stops from the origin to the destination, in the format `['ABC', 'DEF', ... , 'XYZ']`.
 
 For this challenge, assume that the shortest route is the route with the fewest stops. A flight from 'ABC' to 'DEF' does _not_ guarantee that there will also be a flight from 'DEF' to 'ABC'.
 
@@ -17,5 +17,6 @@ If there are multiple possible solutions, return _any_ of them. There will alway
 ## Example
 
 ```ts
-type Flights = [['ABC', 'DEF'], ['DEF', 'GHI'], ['XYZ', 'ABC'], ['DEF', 'JKL'], ['GHI', 'MNO']];
+type Flights = [['ABC', 'DEF'], ['DEF', 'GHI'], ['JKL', 'XYZ'], ['DEF', 'JKL'], ['GHI', 'MNO']];
+Expect<Equal<FewestStops<Flights>, ['ABC', 'JKL', 'XYZ']>>;
 ```
